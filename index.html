@@ -22,7 +22,6 @@
     ::selection { background: #C7822C; color: #F8F2E5; }
     img { display: block; max-width: 100%; }
 
-    /* ── Animations ── */
     @keyframes marquee {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
@@ -31,13 +30,8 @@
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(-9px); }
     }
-    @keyframes revealUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: none; }
-    }
 
-    /* ── Scroll-reveal ── */
-    /* Only below-fold elements get will-reveal (added by JS); above-fold stay visible */
+    /* Scroll-reveal */
     [data-reveal].will-reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -49,7 +43,7 @@
       transform: none;
     }
 
-    /* ── Nav ── */
+    /* Nav */
     .nav-link {
       font-family: 'Space Mono', monospace;
       font-size: 11.5px;
@@ -66,7 +60,7 @@
     .nav-cta {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       font-family: 'Space Mono', monospace;
       font-size: 11.5px;
       text-transform: uppercase;
@@ -80,19 +74,12 @@
     }
     .nav-cta:hover { background: #5A211B; }
 
-    /* ── Image placeholders ── */
+    /* Image slots */
     .img-slot {
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 6px;
-      background: #D4C5AF;
-      border: 1.5px dashed rgba(34, 23, 16, 0.2);
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: rgba(34, 23, 16, 0.35);
       overflow: hidden;
     }
     .img-slot img {
@@ -100,42 +87,54 @@
       height: 100%;
       object-fit: cover;
       border-radius: 6px;
-      border: none;
-    }
-    .img-slot.dark {
-      background: #2D1C12;
-      border-color: rgba(241, 229, 208, 0.15);
-      color: rgba(241, 229, 208, 0.35);
     }
 
-    /* ── Hero social links ── */
-    .hero-social {
+    /* Hero pill social buttons */
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11.5px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
       color: #221710;
       text-decoration: none;
-      border-bottom: 1px solid rgba(34, 23, 16, 0.3);
-      padding-bottom: 2px;
-      transition: border-color 0.25s ease, color 0.25s ease;
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      padding: 9px 16px 9px 13px;
+      border: 1px solid rgba(34, 23, 16, 0.28);
+      border-radius: 999px;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
-    .hero-social:hover { border-bottom-color: #C7822C; color: #5A211B; }
+    .hero-pill:hover { background: #221710; color: #F3EAD9; border-color: #221710; }
 
-    /* ── Contact links ── */
-    .contact-social {
-      color: #221710;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(34, 23, 16, 0.25);
-      padding-bottom: 4px;
-      font-family: 'Space Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: border-color 0.25s ease, color 0.25s ease;
+    /* Skills cards */
+    .skill-card {
+      padding: 24px 22px;
+      margin: -8px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), background 0.35s ease, border-color 0.35s ease;
     }
-    .contact-social:hover { border-bottom-color: #C7822C; color: #5A211B; }
+    .skill-card:hover {
+      transform: translateY(-8px);
+      background: rgba(244, 231, 210, 0.06);
+      border-color: rgba(224, 162, 74, 0.4);
+    }
 
+    /* Toolkit pills */
+    .toolkit-pill {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      padding: 9px 15px;
+      border: 1px solid rgba(244, 231, 210, 0.3);
+      border-radius: 999px;
+      cursor: default;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    .toolkit-pill:hover { background: #E0A24A; color: #5A211B; border-color: #E0A24A; }
+
+    /* Contact */
     .email-link {
       display: inline-flex;
       align-items: center;
@@ -150,7 +149,22 @@
     }
     .email-link:hover { color: #5A211B; }
 
-    /* ── Footer link ── */
+    .contact-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #221710;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(34, 23, 16, 0.25);
+      padding-bottom: 4px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .contact-social:hover { border-bottom-color: #C7822C; color: #5A211B; }
+
     .footer-link {
       color: rgba(241, 229, 208, 0.75);
       text-decoration: none;
@@ -160,9 +174,10 @@
     }
     .footer-link:hover { color: #C7822C; border-bottom-color: #C7822C; }
 
-    /* ── Marquee ── */
+    /* Marquee */
     .marquee-track {
       display: inline-flex;
+      align-items: center;
       white-space: nowrap;
       will-change: transform;
       animation: marquee 30s linear infinite;
@@ -170,15 +185,10 @@
       font-size: clamp(1.4rem, 3vw, 2.3rem);
     }
 
-    /* ── Floaty ornaments ── */
     .floaty { animation: floaty 6s ease-in-out infinite; }
     .floaty-slow { animation: floaty 7.5s ease-in-out infinite; }
 
-    /* ── Responsive utils ── */
-    .section-pad {
-      padding-left: clamp(20px, 6vw, 120px);
-      padding-right: clamp(20px, 6vw, 120px);
-    }
+    #cc-ring, #cc-dot { pointer-events: none; }
   </style>
 </head>
 <body>
@@ -193,14 +203,28 @@
     <nav style="display:flex; align-items:center; gap:clamp(12px,2vw,30px); flex-wrap:wrap;">
       <a href="#about" class="nav-link">About</a>
       <a href="#skills" class="nav-link">Skills</a>
-      <a href="#contact" class="nav-cta">Get in touch ↗</a>
+      <a href="#contact" class="nav-cta" data-magnetic>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="flex:none;"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7.5l8 5.5 8-5.5"/></svg>
+        Get in touch ↗
+      </a>
     </nav>
   </header>
 
   <!-- ======== HERO ======== -->
   <section id="top" style="position:relative; padding:clamp(34px,6vw,80px) clamp(20px,6vw,120px) clamp(48px,7vw,110px);">
-    <span class="floaty" style="position:absolute; top:clamp(120px,16vw,200px); right:clamp(40px,9vw,150px); color:rgba(199,130,44,0.55); font-size:clamp(26px,4vw,52px); pointer-events:none;">✳</span>
+    <!-- Floating ornament -->
     <span class="floaty-slow" style="position:absolute; bottom:clamp(120px,14vw,180px); left:clamp(24px,7vw,130px); color:rgba(90,33,27,0.30); font-size:clamp(20px,3vw,38px); pointer-events:none;">✳</span>
+
+    <!-- Floating icon bubbles -->
+    <div class="floaty" style="position:absolute; top:clamp(96px,15vw,180px); right:clamp(36px,8vw,150px); width:clamp(48px,5vw,64px); height:clamp(48px,5vw,64px); border-radius:999px; background:#221710; color:#F3EAD9; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(34,23,16,0.18); pointer-events:none; z-index:5; animation-duration:6s;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg>
+    </div>
+    <div class="floaty" style="position:absolute; top:clamp(220px,28vw,330px); right:clamp(8px,3vw,60px); width:clamp(48px,5vw,64px); height:clamp(48px,5vw,64px); border-radius:999px; background:#C7822C; color:#221710; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(34,23,16,0.18); pointer-events:none; z-index:5; animation-duration:5.4s; animation-delay:1.2s;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.2v13.6L19 12z"/></svg>
+    </div>
+    <div class="floaty" style="position:absolute; bottom:clamp(150px,17vw,210px); right:clamp(120px,22vw,360px); width:clamp(48px,5vw,64px); height:clamp(48px,5vw,64px); border-radius:999px; background:#5A211B; color:#F3EAD9; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 30px rgba(34,23,16,0.18); pointer-events:none; z-index:5; animation-duration:7s; animation-delay:0.6s; opacity:0.96;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.6-9.4-9C1 9 2.6 5.5 6 5.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.4 0 5 3.5 3.4 6.5C19 16.4 12 21 12 21z"/></svg>
+    </div>
 
     <div data-reveal style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:rgba(34,23,16,0.66); margin-bottom:clamp(28px,5vw,56px);">
       <span>Portfolio &nbsp;·&nbsp; © 2026</span>
@@ -216,9 +240,19 @@
         <p style="font-size:clamp(1.05rem,1.25vw,1.22rem); line-height:1.6; color:rgba(34,23,16,0.82); max-width:46ch; margin:0 0 28px;">
           I'm Chaahat. I help brands grow through content strategy, campaign planning, and a real understanding of the people they're talking to. Less noise, more meaning.
         </p>
-        <div style="display:flex; flex-wrap:wrap; gap:22px;">
-          <a href="https://instagram.com/thechaahateffect" class="hero-social" target="_blank" rel="noopener noreferrer">IG · @thechaahateffect</a>
-          <a href="https://www.linkedin.com/in/chaahatbajaj" class="hero-social" target="_blank" rel="noopener noreferrer">LI · /chaahatbajaj</a>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+          <a href="https://instagram.com/thechaahateffect" class="hero-pill" data-magnetic target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="flex:none;"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+            @thechaahateffect
+          </a>
+          <a href="https://www.linkedin.com/in/chaahatbajaj" class="hero-pill" data-magnetic target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex:none;"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C20.4 8.75 21 11 21 14v7h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21H9z"/></svg>
+            /chaahatbajaj
+          </a>
+          <a href="#contact" class="hero-pill" data-magnetic>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="flex:none;"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7.5l8 5.5 8-5.5"/></svg>
+            Email
+          </a>
         </div>
         <div style="display:flex; align-items:center; gap:14px; margin-top:34px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(34,23,16,0.6);">
           <span style="display:inline-block; width:40px; height:1px; background:#221710; opacity:0.5;"></span>
@@ -229,7 +263,7 @@
       <div data-reveal style="flex:1 1 360px; min-width:280px; position:relative;">
         <div style="position:absolute; inset:auto auto -16px -16px; width:62%; height:62%; background:#C7822C; border-radius:6px; z-index:0;"></div>
         <span class="floaty" style="position:absolute; top:-14px; right:-6px; z-index:2; color:#5A211B; font-size:30px; display:inline-block;">✳</span>
-        <div class="img-slot" id="hero-portrait" style="position:relative; z-index:1; width:100%; height:clamp(360px,40vw,540px);">
+        <div class="img-slot" id="hero-portrait" style="position:relative; z-index:1; width:100%; height:clamp(360px,40vw,540px); will-change:transform;">
           <img src="portrait.jpg" alt="Chaahat Bajaj">
         </div>
         <div style="position:absolute; right:clamp(-6px,1vw,18px); bottom:clamp(-18px,-1.5vw,-26px); z-index:3; width:clamp(82px,9vw,108px); height:clamp(82px,9vw,108px); border-radius:999px; background:#221710; color:#F3EAD9; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; text-align:center; line-height:1.5;">
@@ -254,7 +288,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:clamp(34px,5vw,72px); align-items:flex-start;">
       <div data-reveal style="flex:1 1 320px; min-width:280px; position:relative;">
         <div style="position:absolute; inset:-14px -14px auto auto; width:58%; height:58%; background:#5A211B; border-radius:6px; z-index:0;"></div>
-        <div class="img-slot dark" id="about-portrait" style="position:relative; z-index:1; width:100%; height:clamp(340px,36vw,480px);">
+        <div class="img-slot" id="about-portrait" style="position:relative; z-index:1; width:100%; height:clamp(340px,36vw,480px); will-change:transform;">
           <img src="lifestyle.jpg" alt="Chaahat Bajaj working">
         </div>
       </div>
@@ -271,18 +305,29 @@
   </section>
 
   <!-- ======== MARQUEE ======== -->
-  <div style="overflow:hidden; background:#C7822C; color:#221710; padding:18px 0; border-top:1px solid rgba(34,23,16,0.15); border-bottom:1px solid rgba(34,23,16,0.15);">
+  <div data-marquee style="overflow:hidden; background:#C7822C; color:#221710; padding:18px 0; border-top:1px solid rgba(34,23,16,0.15); border-bottom:1px solid rgba(34,23,16,0.15); cursor:default;">
     <div class="marquee-track">
-      <span style="padding:0 28px;">Content Strategy</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Social Media Marketing</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Campaign Planning</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Audience Research</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Creative Direction</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Content Strategy</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Social Media Marketing</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Campaign Planning</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Audience Research</span><span style="opacity:0.55;">✳</span>
-      <span style="padding:0 28px;">Creative Direction</span><span style="opacity:0.55;">✳</span>
+      <span style="padding:0 28px;">Content Strategy</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <span style="padding:0 28px;">Social Media Marketing</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <span style="padding:0 28px;">Campaign Planning</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <span style="padding:0 28px;">Audience Research</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <span style="padding:0 28px;">Creative Direction</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <!-- duplicate for seamless loop -->
+      <span style="padding:0 28px;">Content Strategy</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <span style="padding:0 28px;">Social Media Marketing</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <span style="padding:0 28px;">Campaign Planning</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <span style="padding:0 28px;">Audience Research</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
+      <span style="padding:0 28px;">Creative Direction</span>
+      <span style="opacity:0.5; display:inline-flex; align-items:center; padding:0 4px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7H7l1.1-1.7A1 1 0 0 1 9 4.8h6a1 1 0 0 1 .85.45L17 7h2.5A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="12.4" r="3.3"/></svg></span>
     </div>
   </div>
 
@@ -301,7 +346,7 @@
     </div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:clamp(28px,3vw,52px); border-top:1px solid rgba(244,231,210,0.2); padding-top:clamp(36px,4vw,56px);">
-      <div data-reveal>
+      <div data-reveal class="skill-card">
         <div style="font-family:'Space Mono',monospace; font-size:12px; color:#E0A24A; margin-bottom:14px;">A</div>
         <h3 style="font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); margin:0 0 18px;">Content Strategy</h3>
         <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; font-size:0.98rem; color:rgba(244,231,210,0.8); line-height:1.4;">
@@ -311,7 +356,7 @@
           <li>Funnel &amp; lifecycle content</li>
         </ul>
       </div>
-      <div data-reveal>
+      <div data-reveal class="skill-card">
         <div style="font-family:'Space Mono',monospace; font-size:12px; color:#E0A24A; margin-bottom:14px;">B</div>
         <h3 style="font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); margin:0 0 18px;">Social Media Marketing</h3>
         <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; font-size:0.98rem; color:rgba(244,231,210,0.8); line-height:1.4;">
@@ -321,7 +366,7 @@
           <li>Influencer &amp; creator collabs</li>
         </ul>
       </div>
-      <div data-reveal>
+      <div data-reveal class="skill-card">
         <div style="font-family:'Space Mono',monospace; font-size:12px; color:#E0A24A; margin-bottom:14px;">C</div>
         <h3 style="font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); margin:0 0 18px;">Campaign Planning</h3>
         <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; font-size:0.98rem; color:rgba(244,231,210,0.8); line-height:1.4;">
@@ -331,7 +376,7 @@
           <li>Cross-channel orchestration</li>
         </ul>
       </div>
-      <div data-reveal>
+      <div data-reveal class="skill-card">
         <div style="font-family:'Space Mono',monospace; font-size:12px; color:#E0A24A; margin-bottom:14px;">D</div>
         <h3 style="font-family:'DM Serif Display',serif; font-weight:400; font-size:clamp(1.5rem,2.4vw,2rem); margin:0 0 18px;">Audience &amp; Insight</h3>
         <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; font-size:0.98rem; color:rgba(244,231,210,0.8); line-height:1.4;">
@@ -346,14 +391,14 @@
     <div data-reveal style="margin-top:clamp(44px,6vw,72px); border-top:1px solid rgba(244,231,210,0.2); padding-top:34px;">
       <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(244,231,210,0.65); margin-bottom:20px;">Toolkit</div>
       <div style="display:flex; flex-wrap:wrap; gap:10px;">
-        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.5px; padding:9px 15px; border:1px solid rgba(244,231,210,0.3); border-radius:999px;">Notion</span>
-        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.5px; padding:9px 15px; border:1px solid rgba(244,231,210,0.3); border-radius:999px;">Figma</span>
-        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.5px; padding:9px 15px; border:1px solid rgba(244,231,210,0.3); border-radius:999px;">GA4</span>
-        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.5px; padding:9px 15px; border:1px solid rgba(244,231,210,0.3); border-radius:999px;">Meta Business Suite</span>
-        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.5px; padding:9px 15px; border:1px solid rgba(244,231,210,0.3); border-radius:999px;">Later</span>
-        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.5px; padding:9px 15px; border:1px solid rgba(244,231,210,0.3); border-radius:999px;">Sprout Social</span>
-        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.5px; padding:9px 15px; border:1px solid rgba(244,231,210,0.3); border-radius:999px;">Canva</span>
-        <span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.5px; padding:9px 15px; border:1px solid rgba(244,231,210,0.3); border-radius:999px;">CapCut</span>
+        <span class="toolkit-pill">Notion</span>
+        <span class="toolkit-pill">Figma</span>
+        <span class="toolkit-pill">GA4</span>
+        <span class="toolkit-pill">Meta Business Suite</span>
+        <span class="toolkit-pill">Later</span>
+        <span class="toolkit-pill">Sprout Social</span>
+        <span class="toolkit-pill">Canva</span>
+        <span class="toolkit-pill">CapCut</span>
       </div>
     </div>
   </section>
@@ -374,12 +419,18 @@
 
     <div data-reveal style="display:flex; flex-wrap:wrap; gap:clamp(28px,5vw,72px); align-items:flex-end; justify-content:space-between;">
       <div>
-        <a class="email-link" data-email data-user="chahatb810" data-domain="gmail.com" href="#contact">Email me ↗</a>
+        <a class="email-link" data-email data-user="chahatb810" data-domain="gmail.com" href="#contact" data-magnetic>Email me ↗</a>
         <p style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:rgba(34,23,16,0.6); margin:26px 0 0;">Available for freelance &amp; select roles · 2026</p>
       </div>
       <div style="display:flex; flex-direction:column; gap:12px;">
-        <a href="https://instagram.com/thechaahateffect" class="contact-social" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-        <a href="https://www.linkedin.com/in/chaahatbajaj" class="contact-social" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://instagram.com/thechaahateffect" class="contact-social" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="flex:none;"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+          Instagram ↗
+        </a>
+        <a href="https://www.linkedin.com/in/chaahatbajaj" class="contact-social" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex:none;"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C20.4 8.75 21 11 21 14v7h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21H9z"/></svg>
+          LinkedIn ↗
+        </a>
       </div>
     </div>
   </section>
@@ -396,9 +447,7 @@
 </div>
 
 <script>
-  // Classify each [data-reveal] element:
-  // — already in viewport → mark visible immediately, no animation, no FOUC
-  // — below fold → add will-reveal (hides it), then observe for scroll-triggered reveal
+  // ── Scroll-reveal ──
   const toObserve = [];
   document.querySelectorAll('[data-reveal]').forEach(el => {
     const rect = el.getBoundingClientRect();
@@ -409,18 +458,15 @@
       toObserve.push(el);
     }
   });
-
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger siblings that are still waiting to reveal
           const group = entry.target.parentElement
             ? Array.from(entry.target.parentElement.querySelectorAll('[data-reveal].will-reveal'))
             : [];
           const idx = group.indexOf(entry.target);
-          const delay = Math.max(0, idx * 80);
-          setTimeout(() => entry.target.classList.add('is-visible'), delay);
+          setTimeout(() => entry.target.classList.add('is-visible'), Math.max(0, idx * 80));
           revealObserver.unobserve(entry.target);
         }
       });
@@ -429,13 +475,85 @@
   );
   toObserve.forEach(el => revealObserver.observe(el));
 
-  // Email assembly — no literal address in the HTML
+  // ── Email assembly ──
   const emailAnchor = document.querySelector('[data-email]');
   if (emailAnchor) {
     const addr = emailAnchor.getAttribute('data-user') + '@' + emailAnchor.getAttribute('data-domain');
     emailAnchor.setAttribute('href', 'mailto:' + addr);
     emailAnchor.textContent = addr + ' ↗';
   }
+
+  const fine = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+
+  // ── Custom magnetic cursor (desktop only) ──
+  if (fine) {
+    const ring = document.createElement('div');
+    ring.id = 'cc-ring';
+    ring.style.cssText = 'position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid #221710;border-radius:999px;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background-color .25s ease,border-color .25s ease;mix-blend-mode:difference;opacity:0;';
+    const dot = document.createElement('div');
+    dot.id = 'cc-dot';
+    dot.style.cssText = 'position:fixed;top:0;left:0;width:6px;height:6px;background:#C7822C;border-radius:999px;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);opacity:0;';
+    document.body.appendChild(ring);
+    document.body.appendChild(dot);
+    document.body.style.cursor = 'none';
+
+    let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my, shown = false;
+    window.addEventListener('mousemove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+      if (!shown) { shown = true; ring.style.opacity = '1'; dot.style.opacity = '1'; }
+    });
+    const loop = () => {
+      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(loop);
+    };
+    loop();
+    const grow = () => { ring.style.width = '64px'; ring.style.height = '64px'; ring.style.backgroundColor = 'rgba(199,130,44,0.22)'; ring.style.borderColor = '#C7822C'; };
+    const shrink = () => { ring.style.width = '36px'; ring.style.height = '36px'; ring.style.backgroundColor = 'transparent'; ring.style.borderColor = '#221710'; };
+    document.querySelectorAll('a, button, [data-cursor-grow], .toolkit-pill').forEach(el => {
+      el.addEventListener('mouseenter', grow);
+      el.addEventListener('mouseleave', shrink);
+    });
+  }
+
+  // ── Magnetic pull on buttons ──
+  if (fine) {
+    document.querySelectorAll('[data-magnetic]').forEach(el => {
+      el.style.transition = 'transform .3s cubic-bezier(.2,.7,.2,1)';
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - (r.left + r.width / 2);
+        const y = e.clientY - (r.top + r.height / 2);
+        el.style.transform = 'translate(' + (x * 0.3) + 'px,' + (y * 0.45) + 'px)';
+      });
+      el.addEventListener('mouseleave', () => { el.style.transform = 'translate(0,0)'; });
+    });
+  }
+
+  // ── Portrait 3D tilt ──
+  if (fine) {
+    document.querySelectorAll('#hero-portrait, #about-portrait').forEach(el => {
+      const p = el.parentElement;
+      if (!p) return;
+      el.style.transition = 'transform .25s ease';
+      p.addEventListener('mousemove', (e) => {
+        const r = p.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = 'perspective(900px) rotateY(' + (px * 7) + 'deg) rotateX(' + (-py * 7) + 'deg) scale(1.02)';
+      });
+      p.addEventListener('mouseleave', () => { el.style.transform = 'perspective(900px) rotateY(0deg) rotateX(0deg) scale(1)'; });
+    });
+  }
+
+  // ── Marquee pause on hover ──
+  document.querySelectorAll('[data-marquee]').forEach(m => {
+    const track = m.querySelector('.marquee-track');
+    if (!track) return;
+    m.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
+    m.addEventListener('mouseleave', () => { track.style.animationPlayState = 'running'; });
+  });
 </script>
 </body>
 </html>
