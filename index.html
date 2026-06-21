@@ -30,6 +30,11 @@
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(-9px); }
     }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .spin-slow { animation: spin-slow 12s linear infinite; }
 
     /* Scroll-reveal */
     [data-reveal].will-reveal {
@@ -266,7 +271,7 @@
         <div class="img-slot" id="hero-portrait" style="position:relative; z-index:1; width:100%; height:clamp(360px,40vw,540px); will-change:transform;">
           <img src="portrait.jpg" alt="Chaahat Bajaj">
         </div>
-        <div style="position:absolute; right:clamp(-6px,1vw,18px); bottom:clamp(-18px,-1.5vw,-26px); z-index:3; width:clamp(82px,9vw,108px); height:clamp(82px,9vw,108px); border-radius:999px; background:#221710; color:#F3EAD9; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; text-align:center; line-height:1.5;">
+        <div class="spin-slow" style="position:absolute; right:clamp(-6px,1vw,18px); bottom:clamp(-18px,-1.5vw,-26px); z-index:3; width:clamp(82px,9vw,108px); height:clamp(82px,9vw,108px); border-radius:999px; background:#221710; color:#F3EAD9; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; text-align:center; line-height:1.5;">
           Scroll<br>down ↓
         </div>
       </div>
